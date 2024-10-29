@@ -4,7 +4,8 @@
         "css": "tailwindcss",
         "typeinfo": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "climits": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
