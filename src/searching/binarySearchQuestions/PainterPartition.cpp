@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 int maxInArray(vector<int> arr) {
     int maxEle = INT_MIN;
     for(int i = 0; i < arr.size(); i++) {
@@ -22,34 +23,32 @@ int sumOfAllEleInArray(vector<int> arr) {
     return sum;
 }
 
-bool isPossible(vector<int> arr, int n, int m, int mid) {
-    int pageAssign = 0;
-    int students = 1;
-    for(int i = 0; i < n; i++) {
-        if(pageAssign + arr[i] <= mid) {
-            pageAssign += arr[i];
+bool isPossible(vector<int> arr, int k, int mid) {
+    int wallGiven = 0;
+    int painters = 1;
+    for(int i = 0; i < arr.size(); i++) {
+        if(wallGiven + arr[i] <= mid) {
+            wallGiven += arr[i];
         }else {
-                students++;
-            if(students > m) {
+            painters++;
+            if(painters > k) {
                 return false;
             }
-                pageAssign = arr[i];
+            wallGiven = arr[i];
         }
     }
     return true;
 }
 
-int maxMinPag(vector<int> arr, int n, int m) {
-    if(arr.size() < m) {
-        return -1;
-    }
+int minTime(vector<int> arr, int k) {
     int start = maxInArray(arr);
-    int end =  sumOfAllEleInArray(arr);
+    int end = sumOfAllEleInArray(arr);
     int mid = -1;
     int ans = -1;
+
     while(start <= end) {
         mid = start + (end - start) / 2;
-        if(isPossible(arr, n, m, mid)) {
+        if(isPossible(arr, k, mid)) {
             ans = mid;
             end = mid - 1;
         } else {
@@ -60,12 +59,9 @@ int maxMinPag(vector<int> arr, int n, int m) {
 }
 
 int main() {
-    // vector<int> arr = {12, 34, 67, 90};
-    vector<int> arr = {12, 34, 90};
-    int n = 3;
-    // int m = 2;
-    int m = 5;
-    int ans = maxMinPag(arr, n, m);
+    vector<int> arr = {5, 10, 30, 20, 15};
+    int k = 3;
+    int ans = minTime(arr, k);
     cout << ans << endl;
     return 0;
 }
