@@ -13,12 +13,10 @@ void print(vector<vector<int>> arr, int row, int col) {
 
 vector<vector<int>> rotate90(vector<vector<int>> arr, int n) {
   vector<vector<int>> ans(n, vector<int>(n));
-  int c = n - 1;
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
-      ans[j][c] = arr[i][j];
+      ans[j][n - 1 - i] = arr[i][j];
     }
-    c--;
   }
   return ans;
 }
