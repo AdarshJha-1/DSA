@@ -1,4 +1,5 @@
 #include <iostream>
+#include <utility>
 #include <vector>
 using namespace std;
 
@@ -21,6 +22,27 @@ vector<vector<int>> rotate90(vector<vector<int>> arr, int n) {
   return ans;
 }
 
+void transpose(vector<vector<int>> &arr, int n) {
+  for (int i = 0; i < n; i++) {
+    for (int j = i; j < n; j++) {
+      swap(arr[i][j], arr[j][i]);
+    }
+  }
+}
+
+void rotate90Best(vector<vector<int>> &arr, int n) {
+  transpose(arr, n);
+  for (int i = 0; i < n; i++) {
+    int l = 0;
+    int r = n - 1;
+    while (l < r) {
+      swap(arr[i][l], arr[i][r]);
+      l++;
+      r--;
+    }
+  }
+}
+
 int main() {
 
   vector<vector<int>> arr = {
@@ -29,5 +51,8 @@ int main() {
   print(arr, 4, 4);
   vector<vector<int>> ans = rotate90(arr, 4);
   print(ans, 4, 4);
+  cout << "Best" << endl;
+  rotate90Best(arr, 4);
+  print(arr, 4, 4);
   return 0;
 }
