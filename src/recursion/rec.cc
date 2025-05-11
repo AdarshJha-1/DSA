@@ -29,7 +29,17 @@ void print1toN(int n) {
   cout << n << endl;
 }
 
+void printEven(int n) {
+  if (n == 0) {
+    return;
+  }
+  printEven(n - 1);
+  if (n % 2 == 0) {
+    cout << n << endl;
+  }
+}
+
 int main() {
-  print1toN(10, 1);
+  print1toN(10);
   return 0;
 }
