@@ -2,14 +2,14 @@
 
 using namespace std;
 
-int sumNNum(int n) {
+int powerOf2(int n) {
   if (n == 1)
     return 1;
-  return n + sumNNum(n - 1);
+  return 2 * powerOf2(n - 1);
 }
 
 int main() {
-  int n = 6;
-  cout << sumNNum(n);
+  int n = 5;
+  cout << powerOf2(n);
   return 0;
 }
