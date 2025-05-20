@@ -4,8 +4,8 @@ using namespace std;
 
 int sum(int arr[], int n, int i) {
   int currSum = arr[i];
-  if (i == n - 1) {
-    return currSum;
+  if (i == n) {
+    return 0;
   }
   return currSum + sum(arr, n, i + 1);
 }
