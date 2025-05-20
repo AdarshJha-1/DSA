@@ -12,8 +12,16 @@ void printArr(vector<int> arr, int i) {
   printArr(arr, i + 1);
 }
 
+void printArrRev(vector<int> arr, int i) {
+  if (i == arr.size() - 1) {
+    cout << arr[i] << " ";
+    return;
+  }
+  printArrRev(arr, i + 1);
+  cout << arr[i] << " ";
+}
 int main() {
   vector<int> arr = {1, 2, 3, 4, 5};
   int i = 0;
-  printArr(arr, i);
+  printArrRev(arr, i);
 }
