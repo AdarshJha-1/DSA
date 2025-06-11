@@ -4,19 +4,22 @@
 
 using namespace std;
 
-void subSum(vector<int> &arr, int i, int temp, vector<int> &ans) {
+void subSum(vector<int> &arr, int i, int temp, vector<int> &ans, int target) {
   if(i == arr.size()) {
     ans.push_back(temp);
+    if(temp == target){
+    cout <<  "YES " << temp << " " << target;
+}
     return;
   }
-  subSum(arr, i + 1, temp, ans);
+  subSum(arr, i + 1, temp, ans, target);
   temp += arr[i];
-  subSum(arr, i + 1, temp, ans);
+  subSum(arr, i + 1, temp, ans, target);
 }
 
 vector<int> ansS(vector<int> &arr) {
   vector<int> ans;
-  subSum(arr, 0, 0, ans);
+  subSum(arr, 0, 0, ans, 12);
   return ans;
 }
 
