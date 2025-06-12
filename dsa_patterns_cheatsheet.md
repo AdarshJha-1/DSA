@@ -1,4 +1,4 @@
-# 🧠 DSA Patterns Cheat Sheet (with Simple Explanations)
+# 🧠 DSA Patterns Cheat Sheet (with Simple Explanations) (ChatGPT :0)
 
 ## 🔁 1. Two Pointers
 
@@ -259,6 +259,3 @@ void unionSet(int a, int b) {
 ```
 
 ---
-
-Let me know if you want to add topics like Tries, Segment Trees, Bitmask DP, or Specific Problem Patterns (e.g., Greedy, Monotonic Stack, etc.).
-
