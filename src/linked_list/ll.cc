@@ -124,7 +124,7 @@ int main() {
     printLL(head);
     deleteAtPostion(head, tail, 3);
     printLL(head);
-insertAtPosition(head, 4, 1000);
+    insertAtPosition(head, 4, 1000);
     printLL(head);
     return 0;
 }
