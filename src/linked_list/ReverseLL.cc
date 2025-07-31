@@ -44,6 +44,14 @@ ListNode* reverseListv1(ListNode* head) {
     }
     return prev;
 }
+
+void reverseListRecursion(ListNode* curr, ListNode* prev) {
+    if(curr == nullptr) {
+        return;
+    }
+
+}
+
 int main() {
     vector<int> arr = {1, 2, 3, 4, 5};
 
