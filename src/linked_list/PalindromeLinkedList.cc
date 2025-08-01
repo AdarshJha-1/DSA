@@ -11,22 +11,55 @@
 #include <vector>
 class Solution {
 public:
-    bool isPalindrome(ListNode* head) {
-        std::vector<int> arr;
-        ListNode* temp = head;
-        while (temp) {
-            arr.push_back(temp.val);
-            temp = temp->next;
+
+    ListNode* reversLL(ListNode* head) {
+        ListNode *b = nullptr;
+        ListNode *c = head;
+        ListNode *f = nullptr;
+
+        while(c) {
+            f = c->next;
+            c->next = b;
+            b = c;
+            c = f;
         }
-        int s = 0;
-        int e = arr.size() - 1;
-        while(s<=e) {
-            if(arr[s] != arr[e]) {
+
+        return b;
+    }
+
+
+    bool compareLL(ListNode* f, ListNode* s) {
+        while(f) {
+            if(f->val != s->val) {
                 return false;
             }
-            s++;
-            e--;
+            f = f->next;
+            s = s->next;
         }
         return true;
+    }
+
+    bool isPalindrome(ListNode* head) {
+        if(!head || !head->next) return true;
+        int count = 0;
+        ListNode* temp = head;
+        while(temp) {
+            count++;
+            temp = temp->next;
+        }
+
+        count /= 2;
+        ListNode* prev = nullptr;
+        ListNode* curr = head;
+        while(count--) {
+            prev = curr;
+            curr = curr->next;
+        }
+
+        prev->next = nullptr;
+
+        curr = reversLL(curr);
+        return compareLL(head, curr);
+        
     }
 };
