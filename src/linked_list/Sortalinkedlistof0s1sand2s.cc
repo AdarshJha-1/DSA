@@ -9,7 +9,7 @@
 };*/
 class Solution {
   public:
-    Node* segregate(Node* head) {
+    Node* segregateM1(Node* head) {
         // code here
         int arr[] = {0, 0, 0};
         Node* temp = head;
@@ -36,5 +36,52 @@ class Solution {
         }
         
         return head;
+    }
+
+    Node* segregateM2(Node* head) {
+        if(!head) return head;
+        Node* temp = hrad;
+        Node* head0 = nullptr;
+        Node* temp0= nullptr;
+
+        Node* head1 = nullptr;
+        Node* temp1 = nullptr;
+
+        Node* head2 = nullptr;
+        Node* temp2 = nullptr;
+
+        while(temp) {
+            if(temp->data == 0) {
+                if(!head0) {
+                    head0 = temp;
+                    temp0 = temp;
+                } else {
+                    temp0->next = temp;
+                    temp0 = temp0->next;
+                }
+            } else if(temp->data == 1) {
+                if(!head1) {
+                    head1 = temp;
+                    temp1 = temp;
+                } else {
+                    temp1->next = temp;
+                    temp1 = temp1->next;
+                }
+            }else {
+                if(!head2) {
+                    head2 = temp;
+                    temp2 = temp;
+                } else {
+                    temp2->next = temp;
+                    temp2 = temp2->next;
+                }
+            }
+            temp = temp->next;
+        }
+
+        temp0->next = head1;
+        temp1->next = head2;
+        temp2->next = nullptr;
+        return head0;
     }
 };
