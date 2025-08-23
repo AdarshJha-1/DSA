@@ -78,6 +78,23 @@ public:
         std::cout << root->data << " ";
         inorder(root->right);
     }
+
+    void levelOrderTraversal(Node* root) {
+        if(root == nullptr) return;
+        std::queue<Node*> q;
+        q.push(root);
+        while(!q.empty()) {
+            Node* curr = q.front();
+            q.pop();
+            std::cout << curr->data <<" "; 
+            if(curr->left != nullptr) {
+                q.push(curr->left);
+            }
+            if(curr->right != nullptr) {
+                q.push(curr->right);
+            }
+        }
+    }
 };
 
 int main() {
@@ -89,6 +106,8 @@ int main() {
     b.postorder(b.root);
     std::cout << std::endl;
     b.inorder(b.root);
+    std::cout << std::endl;
+    b.levelOrderTraversal(b.root);
     std::cout << std::endl;
     return 0;
 }
