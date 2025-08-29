@@ -30,7 +30,7 @@ class Solution {
                     dq.push_back(node->right);
                 }
                 temp.push_back(node->data);
-                delete node;
+                // delete node; // we shoild not delete this :)
             }
             
             if(flag) {
