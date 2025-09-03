@@ -1,29 +1,32 @@
 #include <iostream>
 #include <vector>
 
-void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
-    if(!m && !n) return;
-    if(m && !n) return;
-    if(!m && n) {
-        nums1[0] = nums2[0];
-        return;
-    }
-    int i = m - 1;
-    int j = n - 1;
-    int k = nums1.size() - 1;
+ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        if (!m && !n)
+            return;
+        if (m && !n)
+            return;
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
 
-    while(j >= 0) {
-        if(nums2[j] > nums1[i]) {
-            nums1[k] = nums2[j];
-            j--;
-        } else {
-            nums1[k] = nums1[i];
-            i--;
+        while (i >= 0 && j >= 0) {
+            if (nums2[j] > nums1[i]) {
+                nums1[k] = nums2[j];
+                j--;
+            } else {
+                nums1[k] = nums1[i];
+                i--;
+            }
+            k--;
         }
-        k--;
-    }
-}
 
+        if(j != -1 && i == -1) {
+            while(j >= 0 && k >= 0) {
+                nums1[k--] = nums2[j--]; 
+            }
+        }
+    }
 int main (int argc, char *argv[]) {
     int m =3 ,n= 3;
     std::vector<int> nums1 = {1,2,3,0,0,0};
