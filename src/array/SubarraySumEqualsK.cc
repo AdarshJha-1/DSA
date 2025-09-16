@@ -3,29 +3,23 @@
 
 using namespace std;
 
-int subarraySumBF(vector<int> &nums, int k) {
-  int ans = 0;
+int subarraySum(vector<int>& nums, int k) {
+  int count = 0;
   for (int i = 0; i < nums.size(); i++) {
+    int sum = 0;
     for (int j = i; j < nums.size(); j++) {
-      int sum = 0;
-      for (int k = i; k <= j; k++) {
-        sum += nums[k];
+      sum += nums[j];
+      cout << sum << endl;
+      if (sum == k) {
+        count++;
       }
-      if (sum == k)
-        ans++;
     }
   }
-  return ans;
-}
-
-int subarraySumBetter(vector<int> &nums, int k) {
-  //  map<int, bool> map;
-  for (int i = 0; i < nums.size(); i++) {
-  }
+  return count;
 }
 
 int main() {
-  vector<int> nums = {1, 1, 1};
-  int k = 2;
-  cout << subarraySumBF(nums, k);
+  vector<int> nums = {1,2,1,2,1};
+  int k = 3;
+  cout << subarraySum(nums, k);
 }
