@@ -1,1 +1,5 @@
+# Compiled binary
 a.out
+*.exe
+*.o
+*.out
