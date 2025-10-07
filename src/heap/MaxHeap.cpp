@@ -1,6 +1,5 @@
 #include <iostream>
 #include <utility>
-#include <vector>
 
 using namespace std;
 
@@ -66,6 +65,21 @@ public:
 
 };
 
+void BuildMaxHeap(int *arr, int n) {
+    for(int i = n / 2 - 1; i >= 0; i--) {
+        int temp = i;
+        while(temp * 2 + 1 < n) {
+            int l = temp, lf = temp * 2 + 1, rg = temp * 2 + 2;
+            if(lf < n && arr[lf] > arr[l]) l = lf;
+            if(rg < n && arr[rg] > arr[l]) l = rg;
+
+            if(l== temp) continue;
+            swap(arr[l], arr[temp]);
+            temp = l;
+        }
+    }    
+}
+
 int main() {
     MaxHeap *mh = new MaxHeap(7);
     mh->insert(4);
@@ -78,10 +92,25 @@ int main() {
     
     mh->printMaxHeap();
 
-    mh->deleteMH();
-    mh->printMaxHeap();
+    // mh->deleteMH();
+    // mh->printMaxHeap();
 
-    mh->deleteMH();
-    mh->printMaxHeap();
+    // mh->deleteMH();
+    // mh->printMaxHeap();
+
+    int n = 10;
+    int arr[] = {10, 3, 8, 9, 5, 13,18, 14,11, 70};
+    // BuildMaxHeap(arr, n);
+    // for(int i = 0; i < n; i++) {
+        // cout << arr[i] << " ";
+    // }
+
+    cout << endl;
+    n = 7; 
+    int arr1[] = {4,9,19,11,24,12,29};
+    BuildMaxHeap(arr1, n);
+    for(int i = 0; i < n; i++) {
+        cout << arr1[i] << " ";
+    }
     return 0;
 }
