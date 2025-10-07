@@ -73,11 +73,23 @@ void BuildMaxHeap(int *arr, int n) {
             if(lf < n && arr[lf] > arr[l]) l = lf;
             if(rg < n && arr[rg] > arr[l]) l = rg;
 
-            if(l== temp) continue;
+            if(l== temp) break;
             swap(arr[l], arr[temp]);
             temp = l;
         }
     }    
+}
+
+void heapify(int *arr, int i, int n) {
+    while(i * 2 + 1 < n) {
+        int l = i, lf = i * 2  + 1, rg = i * 2 + 2;
+        if(lf < n && arr[lf] > arr[l]) l = lf;
+        if(rg < n && arr[rg] > arr[l]) l = rg;
+
+        if(l == i) break;
+        swap(arr[l], arr[i]);
+        i = l;
+    }
 }
 
 int main() {
@@ -90,7 +102,7 @@ int main() {
     mh->insert(12);
     mh->insert(29);
     
-    mh->printMaxHeap();
+    // mh->printMaxHeap();
 
     // mh->deleteMH();
     // mh->printMaxHeap();
@@ -106,8 +118,8 @@ int main() {
     // }
 
     cout << endl;
-    n = 7; 
-    int arr1[] = {4,9,19,11,24,12,29};
+    n = 6; 
+    int arr1[] = {4,9,19,11,24,12};
     BuildMaxHeap(arr1, n);
     for(int i = 0; i < n; i++) {
         cout << arr1[i] << " ";

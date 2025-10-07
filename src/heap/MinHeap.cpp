@@ -58,6 +58,20 @@ public:
     }
 };
 
+void BuildMinHeap(int *arr, int n) {
+    for(int i = n / 2 - 1; i >= 0; i--) {
+        int temp = i;
+        while(temp * 2 + 1 < n) {
+            int l = temp, lf = temp * 2 + 1, rg = temp * 2 + 2;
+            if(lf < n && arr[lf] < arr[l]) l = lf;
+            if(rg < n && arr[rg] < arr[l]) l = rg;
+
+            if(l== temp) break;
+            swap(arr[l], arr[temp]);
+            temp = l;
+        }
+    }    
+}
 int main() {
     MinHeap *mh = new MinHeap(7);
     mh->insert(19);
@@ -69,10 +83,16 @@ int main() {
     mh->insert(1);
 
     mh->printMinHeap();
-    mh->deleteMH();
-    mh->printMinHeap();
-    mh->deleteMH();
-    mh->printMinHeap();
-    mh->deleteMH();
+    // mh->deleteMH();
+    // mh->printMinHeap();
+    // mh->deleteMH();
+    // mh->printMinHeap();
+    // mh->deleteMH();
+    int n = 7;
+    int arr[] = {19,21,9,6,7,3,1};
+    BuildMinHeap(arr, n);
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
     return 0;
 }
