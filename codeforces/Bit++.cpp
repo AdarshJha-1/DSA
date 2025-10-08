@@ -15,7 +15,7 @@ int main() {
             x++;
         } else if(str == "--X"){
             --x;
-        } else if(str == "X---") {
+        } else if(str == "X--") {
             x--;
         } else {
             break;
