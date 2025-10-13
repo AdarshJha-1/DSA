@@ -63,3 +63,30 @@ class Solution {
         return pq.top().first;
     }
 };
+
+
+
+
+class Solution {
+  public:
+    int kthSmallest(vector<vector<int>> &mat, int k) {
+        // code here
+        int n = mat.size();
+        int s = mat[0][0];
+        int e = mat[n-1][n-1];
+        while(s < e) {
+            int mid = s + (e - s) / 2;
+            int c = 0;
+            for(const auto &r : mat) {
+                c += upper_bound(r.begin(), r.end(), mid) - r.begin();
+            }
+            
+            if(c >= k) {
+                e = mid;
+            } else {
+                s = mid + 1;
+            }
+        }
+        return s;
+    }
+};
