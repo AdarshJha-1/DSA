@@ -58,3 +58,64 @@ public:
         return root->next;
     }
 };
+
+
+
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* prev;
+    Node* next;
+    Node* child;
+};
+*/
+
+class Solution {
+public:
+    Node* flatten(Node* head) {
+        if(!head) return head;
+        stack<Node*> st;
+        Node* curr = head;
+        Node *root = new Node(0), *tail = root;
+
+        while (curr) {
+            if (curr->next && !curr->child) {
+                tail->next = curr;
+                curr->prev = tail;
+                tail = tail->next;
+                curr = curr->next;
+            } else if (curr->child && !curr->next) {
+                tail->next = curr;
+                curr->prev = tail;
+                tail = tail->next;
+                Node* t = curr->child;
+                curr->child = nullptr;
+                curr = t;
+            } else if (curr->next && curr->child) {
+                st.push(curr->next);
+                tail->next = curr;
+                curr->prev = tail;
+                tail = tail->next;
+                Node* t = curr->child;
+                curr->child = nullptr;
+                curr = t;
+            } else {
+                tail->next = curr;
+                curr->prev = tail;
+                tail = tail->next;
+                curr = curr->next;
+                if(!st.empty()) {
+                    curr = st.top();
+                    st.pop();
+                } else {
+                    curr = nullptr;
+                }
+            }
+        }
+        Node *fh = root->next;
+        fh->prev = nullptr;
+        return fh;
+    }
+};
