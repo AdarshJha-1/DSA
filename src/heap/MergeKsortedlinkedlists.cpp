@@ -72,3 +72,46 @@ class Solution {
             return head->next;
         }
     };
+
+
+    /*
+    class Node {
+      public:
+        int data;
+        Node* next;
+    
+        Node(int x){
+            data = x;
+            next = NULL;
+        }
+    };
+    */
+    
+    class Solution {
+      public:
+        class Compare {
+         public:   
+            bool operator()(Node *a, Node* b) {
+                return a->data > b->data;
+            }
+        };
+        Node* mergeKLists(vector<Node*>& arr) {
+            priority_queue<Node*,  vector<Node*>, Compare> pq;
+            for(Node* &n : arr) {
+                pq.push(n);
+            }
+            Node *head = new Node(0);
+            Node *tail = head;
+            while(!pq.empty()) {
+                tail->next = pq.top();
+                if(pq.top()->next) {
+                    pq.push(pq.top()->next);
+                }
+                tail = tail->next;
+                pq.pop();
+            }
+            
+            tail->next = nullptr;
+            return head->next;
+        }
+    };
