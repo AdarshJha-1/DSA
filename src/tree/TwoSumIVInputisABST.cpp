@@ -31,3 +31,23 @@ public:
         return false;
     }
 };
+
+class Solution {
+public:
+    bool ino(TreeNode* root, unordered_map<int, bool> &m, int k) {
+        if (!root) return false;
+        if(ino(root->left, m, k)) return 1;
+        int want = k - root->val;
+        if (m.find(want) != m.end())
+            return 1;
+        m[root->val] = 1;
+
+        return ino(root->right, m, k);
+    }
+    bool findTarget(TreeNode* root, int k) {
+        if (!root->left && !root->right)
+            return false;
+        unordered_map<int, bool> m;
+        return ino(root, m, k);
+    }
+};
