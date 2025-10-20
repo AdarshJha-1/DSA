@@ -2,7 +2,6 @@ class Solution {
 public:
     string mergeAlternately(string word1, string word2) {
         string ans = "";
-
         // flag = 0 -> word1
         // flag = 1 -> word2
         bool flag = 0; 
