@@ -46,14 +46,14 @@ public:
 class Solution
 {
 public:
-    bool sol(int n, int p, vector<vector<int>> &adj, vector<int> &color)
+    bool sol(int n, vector<vector<int>> &adj, vector<int> &color)
     {
         for (int i = 0; i < adj[n].size(); i++)
         {
             if (color[adj[n][i]] == -1)
             {
                 color[adj[n][i]] = (color[n] + 1) % 2;
-                if (!sol(adj[n][i], n, adj, color))
+                if (!sol(adj[n][i], adj, color))
                     return 0;
             }
             else
@@ -79,7 +79,7 @@ public:
             if (color[i] == -1)
             {
                 color[i] = 0;
-                if (!sol(i, -1, adj, color))
+                if (!sol(i, adj, color))
                     return 0;
             }
         }
