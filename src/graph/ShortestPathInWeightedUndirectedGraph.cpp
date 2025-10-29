@@ -24,6 +24,7 @@ class Solution {
             int node = pq.top().second, v = pq.top().first;
             pq.pop();
             
+
             if(seen[node]) continue; 
             
             seen[node] = 1;
