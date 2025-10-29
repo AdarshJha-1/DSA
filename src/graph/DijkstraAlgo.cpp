@@ -14,20 +14,19 @@ class Solution {
         
         ans[src] = 0;
         
-        int loop = V;
-        while(loop--) {
-            int node = - 1, value = INT_MAX;
-            for(int i = 0; i < V; i++) {
-                if(!seen[i] && ans[i] < value) {
-                    node = i;
-                    value = ans[i];
-                }
-            }
-            seen[node] = 1;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        pq.push({0, src});
+        while(!pq.empty()) {
+            int node = pq.top().second, value = pq.top().first;
+            pq.pop();
             
+            if(seen[node]) continue;
+            
+            seen[node] = 1;
             for(int i = 0; i < adj[node].size(); i++) {
-                if(!seen[adj[node][i].first]) {
-                    ans[adj[node][i].first] = min(ans[adj[node][i].first], ans[node] + adj[node][i].second);
+                if(!seen[adj[node][i].first] && ans[node] + adj[node][i].second < ans[adj[node][i].first]) {
+                    ans[adj[node][i].first] = ans[node] + adj[node][i].second;
+                    pq.push({ans[adj[node][i].first], adj[node][i].first});
                 }
             }
         }
