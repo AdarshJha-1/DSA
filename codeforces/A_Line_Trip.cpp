@@ -22,15 +22,24 @@ int main()
 
         arr.push_back(x);
 
-        vector<int> dist;
+        // vector<int> dist;
+        // for (int i = 1; i < arr.size() - 1; i++)
+        // {
+        //     dist.push_back(arr[i] - arr[i - 1]);
+        // }
+        // dist.push_back(2 * (arr[arr.size() - 1] - arr[arr.size() - 2]));
+
+        // sort(dist.begin(), dist.end());
+        // cout << dist[dist.size() - 1] << "\n";
+
+        int maxDist = 0;
         for (int i = 1; i < arr.size() - 1; i++)
         {
-            dist.push_back(arr[i] - arr[i - 1]);
+            maxDist = max(maxDist, arr[i] - arr[i - 1]);
         }
-        dist.push_back(2 * (arr[arr.size() - 1] - arr[arr.size() - 2]));
+        maxDist = max(maxDist, 2 * (arr[arr.size() - 1] - arr[arr.size() - 2]));
 
-        sort(dist.begin(), dist.end());
-        cout << dist[dist.size() - 1] << "\n";
+        cout << maxDist << "\n";
     }
     return 0;
 }
