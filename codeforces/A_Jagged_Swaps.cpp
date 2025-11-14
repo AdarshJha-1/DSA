@@ -14,8 +14,17 @@ int main()
         {
             cin >> arr[i];
         }
-        int minEle = *min_element(arr.begin(), arr.end());
-        if (minEle == arr[0])
+        // int minEle = *min_element(arr.begin(), arr.end());
+        // if (minEle == arr[0])
+        // {
+        //     cout << "YES" << "\n";
+        // }
+        // else
+        // {
+        //     cout << "NO" << "\n";
+        // }
+
+        if (arr[0] == 1)
         {
             cout << "YES" << "\n";
         }
