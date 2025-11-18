@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <vector>
 #include <iostream>
 using namespace std;
 
@@ -28,15 +29,54 @@ int lPSBF(string str) {
 
 int lPSBetter(string str) {
   int pre = 0;
-  int suf = 0;
+  int suf = 1;
+
+  vector<int>lsp(str.size(), 0);
 
   while (suf < str.size()) {
-    if ()
+    if(str[suf] == str[pre]) {
+      lsp[suf] = pre + 1;
+      pre++;
+      suf++;
+    } else {
+      if(pre == 0) {
+        lsp[suf] = 0;
+        suf++;
+      } else {
+        pre = lsp[pre - 1];
+      }
+    }
   }
+  return lsp[lsp.size() - 1];
 }
 
 int main() {
   string str = "aabcdaabc";
-  cout << lPS(str);
+  cout << lPSBetter(str);
   return 0;
 }
+
+    int getLPSLength(string &s) {
+        vector<string> prefix, suffix;
+        
+        string temp = "";
+        for(int i = 0; i < s.size() - 1; i++) {
+            temp += s[i];
+            prefix.push_back(temp);
+        }
+        
+        temp = "";
+        for(int i = s.size() - 1; i > 0; i--) {
+            temp = s[i] + temp;
+            suffix.push_back(temp);
+        }
+        
+        int ans = 0;
+        for(int i = 0; i < prefix.size(); i++) {
+            if(prefix[i] == suffix[i]) {
+                int len = prefix[i].size();
+                ans = max(ans, len);
+            }
+        }
+        return ans;
+    }
