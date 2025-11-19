@@ -30,3 +30,34 @@ class Solution {
     }
 };
 
+
+class Solution {
+  public:
+    
+    void lpsUtil(string &s, vector<int>&lps) {
+        int pre = 0, suf = 1;
+        while(suf < s.size()) {
+            if(s[suf] == s[pre]) {
+                lps[suf] = pre + 1;
+                suf++, pre++;
+            } else {
+                if(pre == 0) {
+                    lps[suf] = 0;
+                    suf++;
+                } else {
+                    pre = lps[pre - 1];
+                }
+            }
+        }
+    }
+  
+    int minChar(string &s) {
+        string rev = s;
+        reverse(rev.begin(), rev.end());
+        string comb = s + '#' + rev;
+        vector<int> lps(comb.size(), 0);
+        
+        lpsUtil(comb, lps);
+        return  s.size() - lps[lps.size() - 1];
+    }
+};
