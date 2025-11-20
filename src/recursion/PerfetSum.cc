@@ -42,3 +42,35 @@ int main() {
   cout << ans;
   return 0;
 }
+
+class Solution {
+  public:
+    
+    // void sol(vector<int>& arr, int target, int sum, int& ans, int i) {
+    //     if(i >= arr.size()) {
+    //         if(sum == target) ans++;
+    //         return;
+    //     }
+    //     if(sum > target) return;
+    //     sol(arr, target, sum + arr[i], ans, i+1);
+    //     sol(arr, target, sum, ans, i+1);
+    // }
+    
+    int sol(vector<int>& arr, int target, int sum, int i) {
+        if(i >= arr.size()) {
+            if(sum == target) return 1;
+            return 0;
+        }
+        if(sum > target) return 0;
+        return sol(arr, target, sum + arr[i], i+1) +  sol(arr, target, sum, i+1);
+    }
+  
+    int perfectSum(vector<int>& arr, int target) {
+
+        // int ans = 0;
+        // sol(arr, target, 0, ans, 0);
+        // return ans;
+        
+        return sol(arr, target, 0, 0);
+    }
+};
