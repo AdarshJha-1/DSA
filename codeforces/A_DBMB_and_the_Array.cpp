@@ -13,19 +13,38 @@ using namespace std;
 
 void solve()
 {
-    int s, k, m;
-    cin >> s >> k >> m;
-
-    if (k <= s)
+    int n, s, x;
+    cin >> n >> s >> x;
+    int totalSum = 0;
+    int temp;
+    rep(i, 0, n)
     {
-        if ((m / k) % 2 == 0)
-        {
-            cout << max((int)0, s - (m / k)) << endl;
-        }
-        else
-        {
-            cout <<
-        }
+        cin >> temp;
+        totalSum += temp;
+    }
+
+    if (totalSum == s)
+    {
+        yes;
+        return;
+    }
+
+    if (totalSum > s)
+    {
+        no;
+        return;
+    }
+
+    int diff = s - totalSum;
+    if (diff % x == 0)
+    {
+        yes;
+        return;
+    }
+    else
+    {
+        no;
+        return;
     }
 }
 

@@ -2,6 +2,7 @@
 using namespace std;
 
 #define int long long
+#define vi vector<int>
 #define fast_io                  \
     ios::sync_with_stdio(false); \
     cin.tie(nullptr);
@@ -13,20 +14,12 @@ using namespace std;
 
 void solve()
 {
-    int s, k, m;
-    cin >> s >> k >> m;
-
-    if (k <= s)
-    {
-        if ((m / k) % 2 == 0)
-        {
-            cout << max((int)0, s - (m / k)) << endl;
-        }
-        else
-        {
-            cout <<
-        }
-    }
+    int n;
+    cin >> n;
+    n += 1;
+    vi a(n, 0), b(n, 0);
+    rep(i, 1, n) cin >> a[i];
+    rep(i, 1, n) cin >> b[i];
 }
 
 int32_t main()

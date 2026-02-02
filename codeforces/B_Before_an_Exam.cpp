@@ -13,18 +13,17 @@ using namespace std;
 
 void solve()
 {
-    int s, k, m;
-    cin >> s >> k >> m;
+    int d, sumTime;
+    cin >> d >> sumTime;
+    vector<int> ans;
 
-    if (k <= s)
+    while (d--)
     {
-        if ((m / k) % 2 == 0)
+        int minTime, maxTime;
+        cin >> minTime >> maxTime;
+        if (sumTime <= maxTime && sumTime >= minTime)
         {
-            cout << max((int)0, s - (m / k)) << endl;
-        }
-        else
-        {
-            cout <<
+            sumTime -= maxTime;
         }
     }
 }
@@ -34,7 +33,7 @@ int32_t main()
     fast_io;
 
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--)
     {
         solve();

@@ -13,20 +13,8 @@ using namespace std;
 
 void solve()
 {
-    int s, k, m;
-    cin >> s >> k >> m;
-
-    if (k <= s)
-    {
-        if ((m / k) % 2 == 0)
-        {
-            cout << max((int)0, s - (m / k)) << endl;
-        }
-        else
-        {
-            cout <<
-        }
-    }
+    int n, x;
+    cin >> n >> x;
 }
 
 int32_t main()

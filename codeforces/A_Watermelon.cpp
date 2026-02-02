@@ -13,20 +13,9 @@ using namespace std;
 
 void solve()
 {
-    int s, k, m;
-    cin >> s >> k >> m;
-
-    if (k <= s)
-    {
-        if ((m / k) % 2 == 0)
-        {
-            cout << max((int)0, s - (m / k)) << endl;
-        }
-        else
-        {
-            cout <<
-        }
-    }
+    int w;
+    cin >> w;
+    cout << (w > 2 && w % 2 == 0 ? "YES\n" : "NO\n");
 }
 
 int32_t main()
@@ -34,7 +23,7 @@ int32_t main()
     fast_io;
 
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--)
     {
         solve();
