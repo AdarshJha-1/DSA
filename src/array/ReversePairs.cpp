@@ -1,34 +1,48 @@
-class Solution {
+class Solution
+{
 public:
-    int reversePairs(vector<int>& nums) {
+    int reversePairs(vector<int> &nums)
+    {
         sort(nums.begin(), nums.end());
         int count = 0;
         int idx = 0;
-        for(int i = 0; i < nums.size(); i++) {
-            if(nums[idx] * 2 < nums[i]) count++;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (nums[idx] * 2 < nums[i])
+                count++;
         }
         return count;
     }
 };
-class Solution {
+class Solution
+{
 public:
-    int reversePairs(vector<int>& nums) {
+    int reversePairs(vector<int> &nums)
+    {
         int count = 0;
-        for(int i = 0; i < nums.size(); i++) {
-            for(int j = i + 1; j < nums.size(); j++) {
-                if(nums[i] > nums[j] * 2) count++;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            for (int j = i + 1; j < nums.size(); j++)
+            {
+                if (nums[i] > nums[j] * 2)
+                    count++;
             }
         }
         return count;
     }
 };
-class Solution {
+class Solution
+{
 public:
-    int reversePairs(vector<int>& nums) {
+    int reversePairs(vector<int> &nums)
+    {
         int count = 0;
-        for(int i = 0; i < nums.size(); i++) {
-            for(int j = i + 1; j < nums.size(); j++) {
-                if((long long)nums[i] > nums[j] * 2LL) count++;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            for (int j = i + 1; j < nums.size(); j++)
+            {
+                if ((long long)nums[i] > nums[j] * 2LL)
+                    count++;
             }
         }
         return count;
