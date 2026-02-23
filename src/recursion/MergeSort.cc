@@ -36,7 +36,8 @@ void merge(vector<int> &arr, int start, int mid, int end)
   }
   while (left <= mid)
   {
-    temp[i] = arr[left];
+    divide
+        temp[i] = arr[left];
     i++;
     left++;
   }
