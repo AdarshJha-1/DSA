@@ -1,17 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
+#define yes cout << "YES\n";
+#define no cout << "NO\n";
 
 // Problem Statement
 /*
 
-    a tiles one d
-    b tiles other d
 */
 
 // Observations
 /*
 
+    Palindrome: the no of odd occurrence in string is at-most 1.
+    // General idea about palindrome
+    if char has even number of occurrence then we can easily say that we can form a palindrome.
+    if i have a char with odd number of occurrence then i have two options
+    1. if only one char has odd number of occurrence then we can form a palindrome.
+    2. if more than 1 char has odd number of occurrence then it is not likely possible (i-think).
+
+    with in this question
+    if all char has even occurrence then by deleting k time char from the given string i can either remove odd number or even number of char
+    such as
+        -> aabbaabbcccc with this i can form a palindrome such as ccbbaaaabbcc then if my k is even like k = 2
+        then i can remove any 2 occurrence of same char and re-arange it to from a palindrome
+        if it i odd such as k = 3
+         then i can remove any 3 occurrence of same char and after that char occurrence remain odd pr even then i can form a palindrome either by putting it on middel like ...aaa.... or it even then like put pair at left or right aa....aa or a.....a etc
 */
 
 // Claims on algorithm
@@ -21,72 +35,34 @@ using namespace std;
 
 void solve()
 {
-    int a, b, xk, yk, xq, yq;
-    cin >> a >> b >> xk >> yk >> xq >> yq;
+    int n, k;
+    cin >> n >> k;
+    string s;
+    cin >> s;
 
-    int ans = 0;
-
-    // for king
-    set<pair<int, int>> sk;
-    // up-right
-    sk.insert({xk + a, yk + b});
-
-    // up-left
-    sk.insert({xk + a, yk - b});
-
-    // down-right
-    sk.insert({xk - a, yk + b});
-
-    // down-left
-    sk.insert({xk - a, yk - b});
-
-    // right-up
-    sk.insert({xk + b, yk + a});
-
-    // right-down
-    sk.insert({xk - b, yk + a});
-
-    // left-up
-    sk.insert({xk + b, yk - a});
-
-    // left-down
-    sk.insert({xk - b, yk - a});
-
-    // for queen
-    set<pair<int, int>> sq;
-    // up-right
-    sq.insert({xq + a, yq + b});
-
-    // up-left
-    sq.insert({xq + a, yq - b});
-
-    // down-right
-    sq.insert({xq - a, yq + b});
-
-    // down-left
-    sq.insert({xq - a, yq - b});
-
-    // right-up
-    sq.insert({xq + b, yq + a});
-
-    // right-down
-    sq.insert({xq - b, yq + a});
-
-    // left-up
-    sq.insert({xq + b, yq - a});
-
-    // left-down
-    sq.insert({xq - b, yq - a});
-
-    for (auto pos : sk)
+    vector<int> arr(26, 0);
+    for (const auto &c : s)
     {
-        if (sq.count(pos))
+        arr[c - 'a']++;
+    }
+
+    int oddCount = 0;
+    for (const auto &a : arr)
+    {
+        if (a % 2 != 0)
         {
-            ans++;
+            oddCount++;
         }
     }
 
-    cout << ans << "\n";
+    if (oddCount > k + 1)
+    {
+        no;
+    }
+    else
+    {
+        yes;
+    }
 }
 
 int32_t main()

@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 
 // Problem Statement
 /*
 
-    a tiles one d
-    b tiles other d
 */
 
 // Observations
@@ -21,72 +21,11 @@ using namespace std;
 
 void solve()
 {
-    int a, b, xk, yk, xq, yq;
-    cin >> a >> b >> xk >> yk >> xq >> yq;
-
-    int ans = 0;
-
-    // for king
-    set<pair<int, int>> sk;
-    // up-right
-    sk.insert({xk + a, yk + b});
-
-    // up-left
-    sk.insert({xk + a, yk - b});
-
-    // down-right
-    sk.insert({xk - a, yk + b});
-
-    // down-left
-    sk.insert({xk - a, yk - b});
-
-    // right-up
-    sk.insert({xk + b, yk + a});
-
-    // right-down
-    sk.insert({xk - b, yk + a});
-
-    // left-up
-    sk.insert({xk + b, yk - a});
-
-    // left-down
-    sk.insert({xk - b, yk - a});
-
-    // for queen
-    set<pair<int, int>> sq;
-    // up-right
-    sq.insert({xq + a, yq + b});
-
-    // up-left
-    sq.insert({xq + a, yq - b});
-
-    // down-right
-    sq.insert({xq - a, yq + b});
-
-    // down-left
-    sq.insert({xq - a, yq - b});
-
-    // right-up
-    sq.insert({xq + b, yq + a});
-
-    // right-down
-    sq.insert({xq - b, yq + a});
-
-    // left-up
-    sq.insert({xq + b, yq - a});
-
-    // left-down
-    sq.insert({xq - b, yq - a});
-
-    for (auto pos : sk)
-    {
-        if (sq.count(pos))
-        {
-            ans++;
-        }
-    }
-
-    cout << ans << "\n";
+    int n, k, x;
+    cin >> n >> k >> x;
+    int minSum = k * (k + 1) / 2;
+    int maxSum = k * n - (k * (k - 1)) / 2;
+    x >= minSum &&x <= maxSum ? yes : no;
 }
 
 int32_t main()
