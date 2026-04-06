@@ -118,3 +118,78 @@ public:
         return count;
     }
 };
+
+class Solution
+{
+public:
+    void dfs(vector<vector<int>> &isConn, vector<bool> &seen, int r, int n)
+    {
+        seen[r] = true;
+        for (int i = 0; i < n; i++)
+        {
+            if (isConn[r][i] == 1 && !seen[i])
+            {
+                dfs(isConn, seen, i, n);
+            }
+        }
+    }
+
+    int findCircleNum(vector<vector<int>> &isConnected)
+    {
+        int n = isConnected.size();
+        vector<bool> seen(n, false);
+        int count = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (!seen[i])
+            {
+                dfs(isConnected, seen, i, n);
+                count++;
+            }
+        }
+
+        return count;
+    }
+};
+
+class Solution
+{
+public:
+    void bfs(vector<vector<int>> &isConn, vector<bool> &seen, int r, int n)
+    {
+        seen[r] = true;
+        queue<int> q;
+        q.push(r);
+        while (!q.empty())
+        {
+            int cr = q.front();
+            q.pop();
+            for (int i = 0; i < n; i++)
+            {
+                if (isConn[cr][i] == 1 && !seen[i])
+                {
+                    bfs(isConn, seen, i, n);
+                }
+            }
+        }
+    }
+
+    int findCircleNum(vector<vector<int>> &isConnected)
+    {
+        int n = isConnected.size();
+        vector<bool> seen(n, false);
+        int count = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (!seen[i])
+            {
+                bfs(isConnected, seen, i, n);
+                count++;
+            }
+        }
+
+        return count;
+    }
+};
