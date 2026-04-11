@@ -22,31 +22,12 @@ const ll INF = 1e18;
 
 // Observations
 /*
-    if all ele. pro. is already divisible k just o/p -> 0
-    or
 
 */
 
 void solve()
 {
-    int n, k;
-    cin >> n >> k;
-    ll pro = 1;
-    vi arr(n, 1);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-        pro *= arr[i];
-    }
-
-    if (pro % k == 0)
-    {
-        cout << 0 << endl;
-    }
-    else
-    {
-        cout << k << endl;
-    }
+    cout << "1F600" << endl;
 }
 
 int main()
@@ -55,7 +36,7 @@ int main()
     cin.tie(nullptr);
 
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--)
     {
         solve();
