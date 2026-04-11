@@ -19,31 +19,28 @@ using namespace std;
 
 */
 
-void solve() {
-  int A, B;
-  cin >> A >> B;
-  if (B == 1) {
-    cout << 0 << "\n";
-    return;
-  }
-  if (A == 2) {
-    cout << B - 1;
-    return;
-  }
+void solve()
+{
+    int N;
+    cin >> N;
 
-  int aa = B / (A - 1);
-  B % (A - 1) <= 1 ? cout << aa : cout << aa + 1;
+    while (N > 1)
+    {
+        cout << N-- << ",";
+    }
+    cout << 1 << endl;
 }
 
-int32_t main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);
-  cout.tie(0);
+int32_t main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
 
-  int t = 1;
-  // cin >> t;
-  while (t--)
-    solve();
+    int t = 1;
+    // cin >> t;
+    while (t--)
+        solve();
 }
 
 // Golden Rules

@@ -19,31 +19,47 @@ using namespace std;
 
 */
 
-void solve() {
-  int A, B;
-  cin >> A >> B;
-  if (B == 1) {
-    cout << 0 << "\n";
-    return;
-  }
-  if (A == 2) {
-    cout << B - 1;
-    return;
-  }
+void solve()
+{
+    int N;
+    cin >> N;
+    vector<vector<int>> C(N, vector<int>(N, 0));
+    for (int i = 0; i < N; i++)
+    {
+        for (int j = i + 1; j < N; j++)
+        {
+            cin >> C[i][j];
+            C[j][i] = C[i][j];
+        }
+    }
 
-  int aa = B / (A - 1);
-  B % (A - 1) <= 1 ? cout << aa : cout << aa + 1;
+    for (int a = 0; a < N; a++)
+    {
+        for (int b = a + 1; b < N; b++)
+        {
+            for (int c = b + 1; c < N; c++)
+            {
+                if (C[a][b] + C[b][c] < C[a][c])
+                {
+                    cout << "Yes\n";
+                    return;
+                }
+            }
+        }
+    }
+    cout << "No\n";
 }
 
-int32_t main() {
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);
-  cout.tie(0);
+int32_t main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
 
-  int t = 1;
-  // cin >> t;
-  while (t--)
-    solve();
+    int t = 1;
+    // cin >> t;
+    while (t--)
+        solve();
 }
 
 // Golden Rules
