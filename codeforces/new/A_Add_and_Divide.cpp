@@ -22,55 +22,34 @@ const ll INF = 1e18;
 
 // Observations
 /*
-    if all ele. pro. is already divisible k just o/p -> 0
-    or
 
 */
 
 void solve()
 {
-    int n, k;
-    cin >> n >> k;
-    vi arr(n, 1);
-    for (int i = 0; i < n; i++)
+    ll a, b;
+    cin >> a >> b;
+    ll ans = INT_MAX;
+
+    for (int i = 0; i < 32; i++)
     {
-        cin >> arr[i];
+        ll _a = a;
+        ll _b = i + b;
+        ll op = i;
+        if (_b == 1)
+        {
+            continue;
+        }
+
+        while (_a)
+        {
+            op++;
+            _a = floor(_a / _b);
+        }
+        ans = min(ans, op);
     }
 
-    int ans = INT_MAX;
-    if (k == 4)
-    {
-        int evenC = 0;
-        int tempA = INT_MAX;
-        for (int i = 0; i < n; i++)
-        {
-            if (arr[i] % 2 == 0)
-            {
-                evenC++;
-            }
-            if (evenC == 2)
-            {
-                ans = 0;
-                break;
-            }
-            tempA = min(tempA, ())
-        }
-    }
-    else
-    {
-        for (int i = 0; i < n; i++)
-        {
-            if (arr[i] % k == 0)
-            {
-                break;
-            }
-            else
-            {
-                ans = min(ans, (arr[i] / k + 1) * k - arr[i]);
-            }
-        }
-    }
-    cout << (ans == INT_MAX ? 0 : ans) << endl;
+    cout << ans << endl;
 }
 
 int main()
