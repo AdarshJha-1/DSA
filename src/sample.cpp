@@ -1,13 +1,10 @@
+#include <algorithm>
 #include <iostream>
+#include <vector>
 using namespace std;
 
-bool isPrime(int n)
-{
+int main(int argc, char *argv[]) {
 
-}
-
-int main (int argc, char *argv[]) 
-{
-    int n = 9;
-    return 0;
+  string s = "hello world hello";
+  return 0;
 }
