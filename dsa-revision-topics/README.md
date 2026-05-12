@@ -537,3 +537,199 @@ The biggest skill:
 - Heavy Light Decomposition
 - Network Flow
 - Tarjan Algorithm
+
+--- 
+
+# NEW LIST
+
+---
+# Arrays & Prefix Techniques
+
+* ✅ Prefix Sum
+* ✅ Suffix Sum
+* ✅ Difference Array
+* ✅ Kadane’s Algorithm
+* ✅ Two Pointer
+* ✅ Sliding Window
+* ✅ Binary Search
+* ✅ Ternary Search
+* ✅ Dutch National Flag Algorithm
+* ✅ Boyer-Moore Voting Algorithm
+* ✅ Merge Intervals
+* ✅ Sweep Line Algorithm
+
+# Sorting Algorithms
+
+* ✅ Bubble Sort
+* ✅ Selection Sort
+* ✅ Insertion Sort
+* ✅ Merge Sort
+* ✅ Quick Sort
+* ✅ Heap Sort
+* ✅ Counting Sort
+* ✅ Radix Sort
+* ✅ Bucket Sort
+* ✅ Cycle Sort
+
+# Searching Algorithms
+
+* ✅ Linear Search
+* ✅ Binary Search
+* ✅ Lower Bound / Upper Bound
+* ✅ Exponential Search
+* ✅ Interpolation Search
+
+# Recursion & Backtracking
+
+* ✅ Recursion
+* ✅ Backtracking
+* ✅ Generate Subsets
+* ✅ Generate Permutations
+* ✅ N-Queens
+* ✅ Rat in a Maze
+* ✅ Sudoku Solver
+
+# Hashing
+
+* ✅ Hash Map Frequency Counting
+* ✅ Hash Set Lookup
+* ✅ Rolling Hash
+* ✅ Rabin-Karp Algorithm
+
+# Linked List Algorithms
+
+* ✅ Fast & Slow Pointer
+* ✅ Floyd Cycle Detection
+* ✅ Reverse Linked List
+* ✅ Merge Two Lists
+* ✅ LRU Cache Logic
+
+# Stack Algorithms
+
+* ✅ Monotonic Stack
+* ✅ Next Greater Element
+* ✅ Largest Rectangle in Histogram
+* ✅ Infix/Postfix/Prefix Conversion
+* ✅ Expression Evaluation
+
+# Queue & Deque Algorithms
+
+* ✅ Monotonic Queue
+* ✅ BFS using Queue
+* ✅ Sliding Window Maximum
+* ✅ Circular Queue
+
+# Heap / Priority Queue
+
+* ✅ Min Heap
+* ✅ Max Heap
+* ✅ Heapify
+* ✅ Kth Largest/Smallest
+* ✅ Top K Elements
+* ✅ Merge K Sorted Lists
+
+# Greedy Algorithms
+
+* ✅ Activity Selection
+* ✅ Fractional Knapsack
+* ✅ Huffman Coding
+* ✅ Job Scheduling
+* ✅ Interval Scheduling
+* ✅ Gas Station Problem
+
+# Trees
+
+* ✅ DFS
+* ✅ BFS / Level Order Traversal
+* ✅ Tree Traversals
+
+  * Inorder
+  * Preorder
+  * Postorder
+* ✅ Height / Diameter of Tree
+* ✅ Lowest Common Ancestor (LCA)
+* ✅ Binary Search Tree Operations
+* ✅ Balanced Tree Checking
+* ✅ Tree DP
+* ✅ Morris Traversal
+* ✅ Segment Tree
+* ✅ Fenwick Tree / BIT
+* ✅ Trie
+
+# Graph Algorithms
+
+* ✅ DFS
+* ✅ BFS
+* ✅ Topological Sort
+* ✅ Dijkstra’s Algorithm
+* ✅ Bellman-Ford Algorithm
+* ✅ Floyd Warshall Algorithm
+* ✅ Prim’s Algorithm
+* ✅ Kruskal’s Algorithm
+* ✅ Union Find / DSU
+* ✅ Cycle Detection
+* ✅ Bipartite Graph Check
+* ✅ Shortest Path Algorithms
+* ✅ Strongly Connected Components
+
+  * Kosaraju
+  * Tarjan
+* ✅ Articulation Point
+* ✅ Bridges in Graph
+* ✅ Multi Source BFS
+* ✅ 0-1 BFS
+
+# Dynamic Programming (Very Important)
+
+* ✅ Memoization
+* ✅ Tabulation
+* ✅ 1D DP
+* ✅ 2D DP
+* ✅ Knapsack DP
+* ✅ Longest Increasing Subsequence (LIS)
+* ✅ Longest Common Subsequence (LCS)
+* ✅ Matrix Chain Multiplication
+* ✅ DP on Trees
+* ✅ Digit DP
+* ✅ Bitmask DP
+* ✅ Interval DP
+
+# Bit Manipulation
+
+* ✅ XOR Tricks
+* ✅ Bit Masking
+* ✅ Set/Clear/Toggle Bit
+* ✅ Power of Two Check
+* ✅ Brian Kernighan Algorithm
+* ✅ Sieve of Eratosthenes
+
+# String Algorithms
+
+* ✅ KMP Algorithm
+* ✅ Z Algorithm
+* ✅ Manacher’s Algorithm
+* ✅ Trie
+* ✅ Rabin-Karp
+* ✅ String Matching
+* ✅ Prefix Function / LPS Array
+
+# Mathematical Algorithms
+
+* ✅ GCD / Euclid Algorithm
+* ✅ Fast Exponentiation
+* ✅ Modular Arithmetic
+* ✅ Modular Inverse
+* ✅ Prime Factorization
+* ✅ Sieve of Eratosthenes
+* ✅ Combinatorics
+* ✅ Matrix Exponentiation
+
+# Advanced Algorithms
+
+* ✅ Meet in the Middle
+* ✅ Mo’s Algorithm
+* ✅ Sparse Table
+* ✅ Heavy Light Decomposition
+* ✅ Convex Hull
+* ✅ KMP + DP Combinations
+* ✅ Binary Lifting
