@@ -55,7 +55,10 @@ int query(int rl, int rr, int i, int l, int r)
     return sum;
 }
 
-int main()
+// Lazy Propagation
+void updateLazy()
+
+    int main()
 {
     vector<int> nums = {3, 1, 2, 7, 2, 1, 2, 3};
     int n = nums.size();
